@@ -6,3 +6,15 @@
 //
 
 import Foundation
+import XCTest
+
+class BaseTest: XCTestCase {
+    let app = XCUIApplication()
+    
+    override func setUp() {
+        super.setUp()
+        app.launch()
+        
+        
+    }
+}

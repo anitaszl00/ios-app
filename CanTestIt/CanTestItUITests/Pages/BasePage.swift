@@ -6,3 +6,13 @@
 //
 
 import Foundation
+import XCTest
+
+class BasePage {
+    let app = XCUIApplication()
+    
+    func scrollUp() {
+        app.scrollViews.firstMatch.swipeUp(velocity:200)
+    }
+    
+}

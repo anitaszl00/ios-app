@@ -1,0 +1,30 @@
+{
+  "configurations" : [
+    {
+      "id" : "E4CC3DB3-7CF0-44EC-A24D-DA29948E866E",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : [
+        "AddEventTest",
+        "BaseTest",
+        "LogOutTest",
+        "LoginTest\/testLoginTestWithSuccess()"
+      ],
+      "target" : {
+        "containerPath" : "container:CanTestIt.xcodeproj",
+        "identifier" : "5B0EA3E2288730D1009FAB90",
+        "name" : "CanTestItUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

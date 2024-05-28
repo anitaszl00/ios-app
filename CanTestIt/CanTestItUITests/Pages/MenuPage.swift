@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+class MenuPage: BasePage {
+    
+    private lazy var hamburgerMenu = app.buttons["hamburger"].firstMatch
+    private lazy var logOutButton = app.staticTexts["Log out"].firstMatch
+    
+    func tapMenuButton() {
+        hamburgerMenu.tap()
+    }
+    
+    func tapLogOutButton() {
+        logOutButton.tap()
+    }
+    
+}

@@ -49,6 +49,7 @@ struct LoginView: View {
                 delegate: nil,
                 text: $viewModel.login
             )
+            .accessibilityIdentifier("loginNameTextField")
             .frame(height: .defaultControlHeight, alignment: .leading)
                 .background(
                     RoundedRectangle(
@@ -80,6 +81,7 @@ struct LoginView: View {
                 delegate: nil,
                 text: $viewModel.password
             )
+            .accessibilityIdentifier("passwordTextField")
             .frame(height: .defaultControlHeight, alignment: .leading)
             .background(
                 RoundedRectangle(
@@ -109,6 +111,7 @@ struct LoginView: View {
                         )
                         .foregroundColor(.buttonTitleColor)
                 })
+            .accessibilityIdentifier("loginButton")
             .font(.callout)
             .background(Color.primaryColor)
             .cornerRadius(.defaultCornerRadius)
@@ -116,8 +119,11 @@ struct LoginView: View {
             Text(viewModel.error ?? "")
                 .font(.body)
                 .foregroundColor(Color.errorColor)
+                .accessibilityIdentifier("loginErrorMessage")
             Spacer()
             Divider()
+            
+
             
             HStack(alignment: .center) {
                 Spacer()

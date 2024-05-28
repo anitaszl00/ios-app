@@ -249,6 +249,7 @@ final class EventFormView: BaseView {
         premiumEventSwitch.isOn = event.isPremium ?? false
         categoryDropdownField.itemSelected = categoryDropdownField.items?.firstIndex(where: { $0.value as! String == event.category })
     }
+
     
     private func fill(with model: Model) {
         emptyPictureButton.setImage(model.emptyPicture, for: .normal)
@@ -264,6 +265,7 @@ final class EventFormView: BaseView {
             image: model.eventFieldIcon,
             leftPadding: .defaultPadding
         )
+        eventTtitleTextField.accessibilityIdentifier = "eventTtitleTextField"
         
         categoryTitleLabel.text = model.categoryFieldTitle
         categoryDropdownField.hintMessage = model.categoryFieldPlaceholder
@@ -276,6 +278,7 @@ final class EventFormView: BaseView {
             image: model.startDateIcon,
             leftPadding: .defaultPadding
         )
+        startDateTextField.accessibilityIdentifier = "startDateTextField"
         
         endDateTitleLabel.text = model.endDateFieldTitle
         endDateTextField.placeholder = model.endDateFieldPlaceholder
@@ -285,6 +288,7 @@ final class EventFormView: BaseView {
             image: model.endDateIcon,
             leftPadding: .defaultPadding
         )
+        endDateTextField.accessibilityIdentifier = "endDateTextField"
         
         priceTitleLabel.text = model.priceFieldTitle
         priceTextField.placeholder = model.priceFieldPlaceholder
@@ -294,12 +298,20 @@ final class EventFormView: BaseView {
             image: model.priceFieldIcon,
             leftPadding: .defaultPadding
         )
+        priceTextField.accessibilityIdentifier = "priceTextField"
         
         premiumEventTitleLabel.text = model.premiumSwitchTitle
         
+        premiumEventSwitch.accessibilityIdentifier = "premiumEventSwitch"
+        
+        
         saveButton.setTitle(model.saveButtonTitle, for: .normal)
+        saveButton.accessibilityIdentifier = "saveButton"
         cancelButton.setTitle(model.cancelButtonTitle, for: .normal)
         deleteButton.setTitle(model.deleteButtonTitle, for: .normal)
+        
+        deleteButton.accessibilityIdentifier = "deleteButton"
+    
         
         if !model.isDeleteButtonHidden {
             buttonsStackView.addArrangedSubview(deleteButton)

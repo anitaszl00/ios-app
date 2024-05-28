@@ -107,8 +107,9 @@ final class EventListView: BaseView {
         eventsButton.setTitle(model.eventsButtonTitle, for: .normal)
         searchField.placeholder = model.searchFieldPlaceholder
         searchField.placeholderColor(.placeholderColor)
+        searchField.accessibilityIdentifier = "searchField"
     }
-    
+   
     private func setUpViewHierarchy() {
         addSubviews([
             containerView,
